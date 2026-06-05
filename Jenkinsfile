@@ -1,21 +1,29 @@
-pipeline {
+pipeline{
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building the app'
+    stages{
+        stage('Checkout Code'){
+            steps{
+               git 'https://github.com/mrahman2-vt/NTN_LEO_mega-constellation-demo' 
             }
+            
+        }
+        stage('Build'){
+            steps{
+                sh 'echo "Building the app"'
+            }
+            
         }
         stage('Test'){
-            steps {
-                echo 'this is test stage'
+            steps{
+                sh 'echo "Running the test"'
             }
+            
         }
         stage('Deploy'){
-            steps {
-                echo 'Deploying the app'
+            steps{
+                sh 'echo "Deploying"'
             }
+            
         }
-    }  
+    }
 }
