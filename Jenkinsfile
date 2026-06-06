@@ -3,7 +3,8 @@ pipeline{
     stages{
         stage('Checkout Code'){
             steps{
-               git 'https://github.com/mrahman2-vt/NTN_LEO_mega-constellation-demo' 
+               git branch: 'main',
+                   url: 'https://github.com/mrahman2-vt/NTN_LEO_mega-constellation-demo' 
             }
             
         }
